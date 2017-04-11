@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   theme_photo
+ * @package   theme_espi
  * @copyright 2016 Damyon Wiese
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,22 +28,22 @@ defined('MOODLE_INTERNAL') || die();
 if ($ADMIN->fulltree) {
 
     // Boost provides a nice setting page which splits settings onto separate tabs. We want to use it here.
-    $settings = new theme_boost_admin_settingspage_tabs('themesettingphoto', get_string('configtitle', 'theme_photo'));
+    $settings = new theme_boost_admin_settingspage_tabs('themesettingespi', get_string('configtitle', 'theme_espi'));
 
     // Each page is a tab - the first is the "General" tab.
-    $page = new admin_settingpage('theme_photo_general', get_string('generalsettings', 'theme_photo'));
+    $page = new admin_settingpage('theme_espi_general', get_string('generalsettings', 'theme_espi'));
 
     // Replicate the preset setting from boost.
-    $name = 'theme_photo/preset';
-    $title = get_string('preset', 'theme_photo');
-    $description = get_string('preset_desc', 'theme_photo');
+    $name = 'theme_espi/preset';
+    $title = get_string('preset', 'theme_espi');
+    $description = get_string('preset_desc', 'theme_espi');
     $default = 'default.scss';
 
     // We list files in our own file area to add to the drop down. We will provide our own function to
     // load all the presets from the correct paths.
     $context = context_system::instance();
     $fs = get_file_storage();
-    $files = $fs->get_area_files($context->id, 'theme_photo', 'preset', 0, 'itemid, filepath, filename', false);
+    $files = $fs->get_area_files($context->id, 'theme_espi', 'preset', 0, 'itemid, filepath, filename', false);
 
     $choices = [];
     foreach ($files as $file) {
@@ -58,9 +58,9 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
     // Preset files setting.
-    $name = 'theme_photo/presetfiles';
-    $title = get_string('presetfiles','theme_photo');
-    $description = get_string('presetfiles_desc', 'theme_photo');
+    $name = 'theme_espi/presetfiles';
+    $title = get_string('presetfiles','theme_espi');
+    $description = get_string('presetfiles_desc', 'theme_espi');
 
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'preset', 0,
         array('maxfiles' => 20, 'accepted_types' => array('.scss')));
@@ -68,9 +68,9 @@ if ($ADMIN->fulltree) {
 
     // Variable $brand-color.
     // We use an empty default value because the default colour should come from the preset.
-    $name = 'theme_photo/brandcolor';
-    $title = get_string('brandcolor', 'theme_photo');
-    $description = get_string('brandcolor_desc', 'theme_photo');
+    $name = 'theme_espi/brandcolor';
+    $title = get_string('brandcolor', 'theme_espi');
+    $description = get_string('brandcolor_desc', 'theme_espi');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -79,65 +79,65 @@ if ($ADMIN->fulltree) {
     $settings->add($page);
 
     // Each page is a tab - the second is the "Backgrounds" tab.
-    $page = new admin_settingpage('theme_photo_backgrounds', get_string('backgrounds', 'theme_photo'));
+    $page = new admin_settingpage('theme_espi_backgrounds', get_string('backgrounds', 'theme_espi'));
 
     // Default background setting.
     // We use variables for readability.
-    $name = 'theme_photo/defaultbackgroundimage';
-    $title = get_string('defaultbackgroundimage', 'theme_photo');
-    $description = get_string('defaultbackgroundimage_desc', 'theme_photo');
+    $name = 'theme_espi/defaultbackgroundimage';
+    $title = get_string('defaultbackgroundimage', 'theme_espi');
+    $description = get_string('defaultbackgroundimage_desc', 'theme_espi');
     // This creates the new setting.
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'defaultbackgroundimage');
     // This function will copy the image into the data_root location it can be served from.
-    $setting->set_updatedcallback('theme_photo_update_settings_images');
+    $setting->set_updatedcallback('theme_espi_update_settings_images');
     // We always have to add the setting to a page for it to have any effect.
     $page->add($setting);
 
     // Login page background setting.
     // We use variables for readability.
-    $name = 'theme_photo/loginbackgroundimage';
-    $title = get_string('loginbackgroundimage', 'theme_photo');
-    $description = get_string('loginbackgroundimage_desc', 'theme_photo');
+    $name = 'theme_espi/loginbackgroundimage';
+    $title = get_string('loginbackgroundimage', 'theme_espi');
+    $description = get_string('loginbackgroundimage_desc', 'theme_espi');
     // This creates the new setting.
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'loginbackgroundimage');
     // This function will copy the image into the data_root location it can be served from.
-    $setting->set_updatedcallback('theme_photo_update_settings_images');
+    $setting->set_updatedcallback('theme_espi_update_settings_images');
     // We always have to add the setting to a page for it to have any effect.
     $page->add($setting);
 
     // Frontpage page background setting.
     // We use variables for readability.
-    $name = 'theme_photo/frontpagebackgroundimage';
-    $title = get_string('frontpagebackgroundimage', 'theme_photo');
-    $description = get_string('frontpagebackgroundimage_desc', 'theme_photo');
+    $name = 'theme_espi/frontpagebackgroundimage';
+    $title = get_string('frontpagebackgroundimage', 'theme_espi');
+    $description = get_string('frontpagebackgroundimage_desc', 'theme_espi');
     // This creates the new setting.
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'frontpagebackgroundimage');
     // This function will copy the image into the data_root location it can be served from.
-    $setting->set_updatedcallback('theme_photo_update_settings_images');
+    $setting->set_updatedcallback('theme_espi_update_settings_images');
     // We always have to add the setting to a page for it to have any effect.
     $page->add($setting);
 
     // Dashboard page background setting.
     // We use variables for readability.
-    $name = 'theme_photo/dashboardbackgroundimage';
-    $title = get_string('dashboardbackgroundimage', 'theme_photo');
-    $description = get_string('dashboardbackgroundimage_desc', 'theme_photo');
+    $name = 'theme_espi/dashboardbackgroundimage';
+    $title = get_string('dashboardbackgroundimage', 'theme_espi');
+    $description = get_string('dashboardbackgroundimage_desc', 'theme_espi');
     // This creates the new setting.
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'dashboardbackgroundimage');
     // This function will copy the image into the data_root location it can be served from.
-    $setting->set_updatedcallback('theme_photo_update_settings_images');
+    $setting->set_updatedcallback('theme_espi_update_settings_images');
     // We always have to add the setting to a page for it to have any effect.
     $page->add($setting);
 
     // In course page background setting.
     // We use variables for readability.
-    $name = 'theme_photo/incoursebackgroundimage';
-    $title = get_string('incoursebackgroundimage', 'theme_photo');
-    $description = get_string('incoursebackgroundimage_desc', 'theme_photo');
+    $name = 'theme_espi/incoursebackgroundimage';
+    $title = get_string('incoursebackgroundimage', 'theme_espi');
+    $description = get_string('incoursebackgroundimage_desc', 'theme_espi');
     // This creates the new setting.
     $setting = new admin_setting_configstoredfile($name, $title, $description, 'incoursebackgroundimage');
     // This function will copy the image into the data_root location it can be served from.
-    $setting->set_updatedcallback('theme_photo_update_settings_images');
+    $setting->set_updatedcallback('theme_espi_update_settings_images');
     // We always have to add the setting to a page for it to have any effect.
     $page->add($setting);
 
@@ -145,17 +145,17 @@ if ($ADMIN->fulltree) {
     $settings->add($page);
 
     // Advanced settings.
-    $page = new admin_settingpage('theme_photo_advanced', get_string('advancedsettings', 'theme_photo'));
+    $page = new admin_settingpage('theme_espi_advanced', get_string('advancedsettings', 'theme_espi'));
 
     // Raw SCSS to include before the content.
-    $setting = new admin_setting_configtextarea('theme_photo/scsspre',
-        get_string('rawscsspre', 'theme_photo'), get_string('rawscsspre_desc', 'theme_photo'), '', PARAM_RAW);
+    $setting = new admin_setting_configtextarea('theme_espi/scsspre',
+        get_string('rawscsspre', 'theme_espi'), get_string('rawscsspre_desc', 'theme_espi'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     // Raw SCSS to include after the content.
-    $setting = new admin_setting_configtextarea('theme_photo/scss', get_string('rawscss', 'theme_photo'),
-        get_string('rawscss_desc', 'theme_photo'), '', PARAM_RAW);
+    $setting = new admin_setting_configtextarea('theme_espi/scss', get_string('rawscss', 'theme_espi'),
+        get_string('rawscss_desc', 'theme_espi'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

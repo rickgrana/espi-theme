@@ -17,7 +17,7 @@
 /**
  * Photo backgrounds.
  *
- * @package    theme_photos
+ * @package    theme_espis
  * @copyright  2016 Damyon Wiese
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -33,11 +33,11 @@ $plugin->requires = 2016112900.00;
 
 // This is the component name of the plugin - it always starts with 'theme_'
 // for themes and should be the same as the name of the folder.
-$plugin->component = 'theme_photo';
+$plugin->component = 'theme_espi';
 
 // This is a list of plugins, this plugin depends on (and their versions).
 $plugin->dependencies = [
-    'theme_boost' => 2016102100
+    'theme_boost' => 2016120500
 ];
 
 // This is a stable release.
