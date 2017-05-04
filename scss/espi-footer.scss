@@ -1,0 +1,33 @@
+
+#barra-azul {
+  padding: 5px 0;
+  color: #fff;
+  width: 100%;
+  font-size: 10px;
+  float: left;
+  overflow: hidden;
+  background: #006AB7;
+  z-index: 10;
+}
+
+
+footer small {
+  font-size: 10px;
+  color: #FFF;
+  float: left;
+  margin: 30px auto 10px;
+  text-align: left;
+  display: block;
+  border-top: 1px solid #00A4EF;
+  padding-top: 20px;
+  width: 100%;
+}
+
+
+.link-mapa {
+  width: 65px;
+  text-align: left;
+  margin-right: 10px;
+  float: left;
+  border-right: 1px solid rgba(255,255,255,.27);
+}

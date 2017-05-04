@@ -1,0 +1,57 @@
+// Teste pra ver se está chamando - bote uma cor qualquer no fundo e dê refresh
+//body{
+//  background-color: #0000cc;
+//}
+
+@import "./fonts.scss";
+
+#menu-principal {
+  float: right;
+  position: relative;
+  top: 35px;
+  height: 20px;
+  text-align: right;
+  display: inline-block;
+
+  li {
+    padding: 0;
+    display: inline;
+    margin-left: 15px;
+  }
+
+  a {
+    color: #9C9C9C;
+    font-family: msul;
+    font-size: 20px;
+    line-height: 20px;
+    :hover {
+      color: #DADADA;
+    }
+  }
+
+}
+
+#barra-principal {
+  position: relative;
+  background: #fff;
+  border-bottom: 2px solid #EFEFEF;
+  width: 100%;
+  z-index: 0
+}
+
+
+.logo-espi {
+  margin: 10px 20px 10px 0;
+}
+
+.width {
+  width: 1200px;
+  margin: auto;
+  position: relative;
+}
+
+.full-width {
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}

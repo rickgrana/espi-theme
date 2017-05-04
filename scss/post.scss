@@ -1,5 +1,8 @@
 // Post SCSS for the theme.
 
+@import "./espi-header";
+@import "./espi-footer";
+
 body.pagelayout-login {
     background-image: url([[pix:theme_espi|loginbackgroundimage]]);
     background-size: cover;
