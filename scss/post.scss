@@ -30,3 +30,12 @@ body {
     background-image: url([[pix:theme_espi|defaultbackgroundimage]]);
     background-size: cover;
 }
+
+#page {
+    margin-top: 0;
+}
+
+#page-wrapper {
+    margin: 0 0 -($footer-height) 0;
+    min-height: calc(100% - #{$footer-height+10px});
+}

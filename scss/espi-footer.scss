@@ -1,33 +1,39 @@
-
-#barra-azul {
-  padding: 5px 0;
+#page-footer{
+  background-color: #006AB7;
   color: #fff;
-  width: 100%;
-  font-size: 10px;
-  float: left;
-  overflow: hidden;
-  background: #006AB7;
-  z-index: 10;
-}
+  min-height: $footer-height;
 
+  a, li a {
+    color: #fff;
+    text-decoration: none;
+  }
 
-footer small {
-  font-size: 10px;
-  color: #FFF;
-  float: left;
-  margin: 30px auto 10px;
-  text-align: left;
-  display: block;
-  border-top: 1px solid #00A4EF;
-  padding-top: 20px;
-  width: 100%;
-}
+  small{
+    float: left;
+    margin: 10px auto;
+  }
 
+  .link-mapa {
+    width: 65px;
+    text-align: left;
+    margin-right: 10px;
+    float: left;
+    border-right: 1px solid rgba(255,255,255,.27);
+    font-size: 10px;
 
-.link-mapa {
-  width: 65px;
-  text-align: left;
-  margin-right: 10px;
-  float: left;
-  border-right: 1px solid rgba(255,255,255,.27);
+    i {
+      font-size: 30px;
+      float: left;
+      margin-right: 5px;
+      line-height: 36px;
+    };
+
+    p {
+      text-transform: uppercase;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+  }
+
 }
